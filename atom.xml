@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>新的开始</title>
+  <title>小白的个人博客</title>
   <icon>https://www.gravatar.com/avatar/e0a8dde6b7ff1bb936499f998976dc61</icon>
   <subtitle>工作，生活，缺一不可</subtitle>
   <link href="/atom.xml" rel="self"/>
