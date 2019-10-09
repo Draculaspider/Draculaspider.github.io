@@ -26,7 +26,7 @@
 <meta property="og:image" content="http://draculaspider.github.io/2019/10/09/Day01-OpenStack入门介绍/openstack%E7%AE%A1%E7%90%86%E5%9D%97%E5%AD%98%E5%82%A8.jpg">
 <meta property="og:image" content="http://draculaspider.github.io/2019/10/09/Day01-OpenStack入门介绍/openstack%E6%8F%90%E4%BE%9B%E5%9F%BA%E4%BA%8E%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%AD%98%E5%82%A8.jpg">
 <meta property="og:image" content="http://draculaspider.github.io/2019/10/09/Day01-OpenStack入门介绍/openstack组件介绍.jpg">
-<meta property="og:updated_time" content="2019-10-09T02:56:47.015Z">
+<meta property="og:updated_time" content="2019-10-09T06:11:13.843Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Day01 OpenStack入门介绍">
 <meta name="twitter:description" content="Day01 OpenStack入门介绍：     本章介绍了什么是OpenStack，及OpenStack云操作系统的组件，以及各组件的交互，达到初级的入门，以快速了解openstack这一开源的云操作系统。">
@@ -185,7 +185,7 @@
                         
                             <li><a  href="/categories/datacommunication/">华为数据通信</a></li>
                         
-                            <li><a  href="/cattegories/Linux">Linux 进阶之路</a></li>
+                            <li><a  href="/categories/Linux">Linux 进阶之路</a></li>
                         
                             <li><a  href="/categories/python/">Python 进阶之路</a></li>
                         
@@ -268,7 +268,7 @@
                 
                     <li><a href="/categories/datacommunication/">华为数据通信</a></li>
                 
-                    <li><a href="/cattegories/Linux">Linux 进阶之路</a></li>
+                    <li><a href="/categories/Linux">Linux 进阶之路</a></li>
                 
                     <li><a href="/categories/python/">Python 进阶之路</a></li>
                 
@@ -344,8 +344,8 @@
 <p>本章介绍了什么是OpenStack，及OpenStack云操作系统的组件，以及各组件的交互，达到初级的入门，以快速了解openstack这一开源的云操作系统。</p>
 <a id="more"></a>
 
-<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><h3 id="1-介绍OpenStack"><a href="#1-介绍OpenStack" class="headerlink" title="1  介绍OpenStack"></a>1  介绍OpenStack</h3><p>一二十年前，很多大型的计算机硬件公司都通过自己生产制造专门的处理器来保持竞争优<br>势。但随着成本的上升，能制造出足够数量的芯片来保持盈利的公司越来越少。于是，专门生产芯片的厂商出现了，它们可以大规模生产通用处理器，并且大大降低了成本。从一开始的只有少数计算机芯片厂商“鼓吹”的基于英特尔x86 指令集的标准化台式机和服务器平台，到最后形成了采用通用硬件的客户-服务器的市场格局。</p>
-<p> 在 21 世纪初的互联网风潮下，互联网快速发展，从而出现了大量大规模使用通用硬件的数据中心。虽然通用硬件设备强大且便宜，但它的架构就跟我们看到的台式机一样，不是按中心化管理的思想来设计的。没有现成的工具可以用来像管理资源池一样管理这些通用硬件设备。更糟糕的是，在那时，这些服务器缺少硬件管理的能力（辅助管理卡），看起来跟台式机一样。不像大型机和大型对称多处理结构（symmetric multiprocessing，SMP）的机器，这些通用服务器跟台式机一样，需要通过软件管理层来协调其他独立的资源。</p>
+<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><h3 id="1-介绍OpenStack"><a href="#1-介绍OpenStack" class="headerlink" title="1  介绍OpenStack"></a>1  介绍OpenStack</h3><p>一二十年前，很多大型的计算机硬件公司都通过自己生产制造专门的处理器来保持竞争优<br>势。但随着成本的上升，能制造出足够数量的芯片来保持盈利的公司越来越少。于是，专门生产芯片的厂商出现了，它们可以大规模生产通用处理器，并且大大降低了成本。从一开始的只有少数计算机芯片厂商“鼓吹”的基于英特尔x86 指令集的标准化台式机和服务器平台，到最后形成了采用通用硬件的客户-服务器的市场格局。 </p>
+<p>  在 21 世纪初的互联网风潮下，互联网快速发展，从而出现了大量大规模使用通用硬件的数据中心。虽然通用硬件设备强大且便宜，但它的架构就跟我们看到的台式机一样，不是按中心化管理的思想来设计的。没有现成的工具可以用来像管理资源池一样管理这些通用硬件设备。更糟糕的是，在那时，这些服务器缺少硬件管理的能力（辅助管理卡），看起来跟台式机一样。不像大型机和大型对称多处理结构（symmetric multiprocessing，SMP）的机器，这些通用服务器跟台式机一样，需要通过软件管理层来协调其他独立的资源。</p>
 <p>在这个阶段，公共或者私有的组织在自己内部开发出很多管理框架来管理公共资源。图1-1展示了跨越多个数据中心的相互连接的资源池。通过管理框架，这些公共资源可以基于其可用性或者用户需求来灵活使用。不知道谁创造了这个术语，这种通过管理框架来灵活使用通用硬件设备的计算方式，可以说是拥有了资源“云”。</p>
 <img src="/2019/10/09/Day01-OpenStack入门介绍/彼此互联的通用资源的云.jpg" style="zoom: 67%;">
 
@@ -411,7 +411,7 @@
         <p><span>本文标题:</span><a  href="/2019/10/09/Day01-OpenStack入门介绍/">Day01 OpenStack入门介绍</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 LH 的个人博客">LH</a></p>
         <p><span>发布时间:</span>2019年10月09日 - 08时36分</p>
-        <p><span>最后更新:</span>2019年10月09日 - 10时56分</p>
+        <p><span>最后更新:</span>2019年10月09日 - 14时11分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/10/09/Day01-OpenStack入门介绍/" title="Day01 OpenStack入门介绍">http://Draculaspider.github.io/2019/10/09/Day01-OpenStack入门介绍/</a>
             <span class="copy-path" data-clipboard-text="原文: http://Draculaspider.github.io/2019/10/09/Day01-OpenStack入门介绍/　　作者: LH" title=""></span>
